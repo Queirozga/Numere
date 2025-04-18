@@ -65,7 +65,7 @@ body{
     gap: 10px;
 }
 
-.content{
+.content form{
     display: flex;
     flex-flow: column wrap;
     align-items: center;
