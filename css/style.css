@@ -71,13 +71,13 @@ body{
     flex-flow: column wrap;
     align-items: center;
     align-content: center;
-    justify-content: center;
+    justify-content: start;
     background-color: var(--bg2);
-    min-width: 700px;
+    min-width: 300px;
     min-height: 300px;
+    max-height: 10000px;
     margin-bottom: 100px;
     border-radius: 10px;
-
     
     & h2{
         display: flex;
@@ -93,7 +93,7 @@ body{
         color: var(--cor3);
     }
 
-    & .submit{
+    /* & .submit{
         margin-top: 20px;
         margin-bottom: 20px;
         padding: 10px;
@@ -104,30 +104,37 @@ body{
         background-color: var(--cor6);
         color: var(--cor1);
         font-weight: 700;
-    }
+    } */
 
-    & .tentativa{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 150px;
-        height: 40px;
-        background-color: var(--cor5);
-        border: 3px solid var(--bg2);
-        outline: 2px solid var(--cor1);
-        border-radius:  5px;
-        font-size: 1.2em;
-        color: var(--cor1);
-    }
+}
+
+.tentativa_container{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.tentativa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    margin: 7px;
+    background-color: var(--cor5);
+    border: 3px solid var(--bg2);
+    outline: 2px solid var(--cor1);
+    border-radius:  5px;
+    font-size: 1.2em;
+    color: var(--cor1);
 }
 
 .adv{
     all: unset;
-    margin-top: 50px;
     height: 40px;
-    width: 200px;
+    width: 270px;
     height: 30px;
     padding: 10px;
+    margin-top: 5px;
     background-color: var(--bg);
     border: none;
     text-decoration: none;
@@ -135,6 +142,48 @@ body{
     color: var(--cor1);
     font-size: 16px;
     font-weight: 700;
+}
+
+.congrats_popup {
+    visibility: hidden; /* mudar */
+    position: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg2);
+    padding: 10px;
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+    border: 1px solid var(--cor1);
+
+    & h1 {
+        color: var(--cor3);
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+    
+    & p {
+        color: var(--cor1);
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+
+    & .again_bnt{
+        margin-top: 20px;
+        padding: 10px;
+        width: 300px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+        background-color: var(--cor3);
+        color: var(--cor1);
+        font-weight: 700;
+        text-shadow: 1px 1px 5px #253a3846;
+    }
 }
 
 footer{

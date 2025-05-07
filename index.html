@@ -21,12 +21,18 @@
             <p id="tip"></p>
             <form action="" id="form">
                 <label for="iadv"></label>
-                <input type="text" name="adv" class="adv" id="iadv" required placeholder="Digite um número aqui..." maxlength="4" >
-                <input type="submit" value="Enviar" class="submit" id="submit">
+                <input type="text" name="adv" class="adv" id="iadv" required placeholder="Digite um número aqui..." maxlength="3" >
+                <!-- <input type="submit" value="Enviar" class="submit" id="submit"> -->
+
+                <div class="tentativa_container"></div>
                 
-                <div class="tentativa" id="tentativa">56</div>
-                </div>
             </form>
+        </div>
+        <div class="congrats_popup">
+            <h1>Parabéns!</h1>
+            <p>O número era <span class="numero">0</span>.</p>
+            <p>Você acertou em <span class="tentativas">0</span> tentativas.</p>
+            <button class="again_bnt">Jogar novamente</button>
         </div>
     </div>
     <footer>
@@ -34,5 +40,6 @@
     </footer>
 
     <script src="js/main.js"></script>
-</body> 
+    <script src="js/script.js"></script>
+</body>
 </html>
