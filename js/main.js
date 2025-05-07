@@ -27,6 +27,19 @@ const divSeMenor = () => {
     div.style.backgroundColor = `#2F6073`;
 }
 
+const startAgain = () => {
+    let startBtn = document.querySelector('.again_bnt');
+    startBtn.addEventListener('click', restart);
+}
+
+function restart() { // terminar isso ()
+    congrats.style.visibility = 'hidden';
+    input.disabled = false;
+    submit.disabled = false;
+    input.value = '';
+    input.focus();
+}
+
 function tentativa(e) {
     e.preventDefault();
     tentativas++;
@@ -41,10 +54,14 @@ function tentativa(e) {
     if (input.value === correct) {
         let congrats = document.querySelector('.congrats_popup');
         let correctText = document.querySelector('.numero');
-        let tryes = document.querySelector('.tentativas');
+        let attempts = document.querySelector('.tentativas');
         congrats.style.visibility = 'visible';
-        correctText = correct;
-        tryes = tentativas;
+        correctText.innerText = correct;
+        attempts.innerText = tentativas;
+
+        input.value = '';
+        input.disabled = true;
+        submit.disabled = true;
     } else if (input.value < correct) {
         divSeMenor()
     } else if (input.value > correct) {
