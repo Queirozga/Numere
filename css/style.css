@@ -27,9 +27,10 @@ body{
 }
 
 .top {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 10px;
-    margin-left: 30px;
     color: var(--cor1);
     background-color: var(--bg);
 
@@ -73,8 +74,8 @@ body{
     align-content: center;
     justify-content: start;
     background-color: var(--bg2);
-    min-width: 300px;
-    min-height: 300px;
+    min-width: 500px;
+    min-height: 30px;
     max-height: 10000px;
     margin-bottom: 100px;
     border-radius: 10px;
@@ -117,7 +118,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
+    padding-left: 10px;
+    width: 485px;
     height: 40px;
     margin: 7px;
     background-color: var(--cor5);
@@ -125,13 +127,14 @@ body{
     outline: 2px solid var(--cor1);
     border-radius:  5px;
     font-size: 1.2em;
+    font-weight: 600;
     color: var(--cor1);
 }
 
 .adv{
     all: unset;
     height: 40px;
-    width: 270px;
+    width: 470px;
     height: 30px;
     padding: 10px;
     margin-top: 5px;
@@ -145,7 +148,7 @@ body{
 }
 
 .congrats_popup {
-    visibility: hidden; /* mudar */
+    visibility: hidden;
     position: fixed;
     display: flex;
     flex-flow: column wrap;
@@ -157,7 +160,7 @@ body{
     background-color: var(--bg2);
     padding: 10px;
     border-radius: 5px;
-    width: 350px;
+    width: 400px;
     height: 350px;
     border: 1px solid var(--cor1);
 
@@ -175,7 +178,7 @@ body{
     & .again_bnt{
         margin-top: 20px;
         padding: 10px;
-        width: 300px;
+        width: 350px;
         border-radius: 10px;
         border: none;
         font-size: 16px;
@@ -184,6 +187,10 @@ body{
         font-weight: 700;
         text-shadow: 1px 1px 5px #253a3846;
     }
+}
+
+#arrow_icon {
+    padding-right: 5px;
 }
 
 footer{
