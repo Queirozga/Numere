@@ -1,17 +1,19 @@
 let form = document.querySelector('#form');
-let submit = document.querySelector('#submit');
 let input = document.querySelector('#iadv');
 let tentEl = document.querySelector('.tentativa_container');
+let congrats = document.querySelector('.congrats_popup');
+let startBtn = document.querySelector('.again_bnt');
 let tentativas = 0;
 
 const createCorrect = () => {
-    let correctNum = (Math.random() * 100).toFixed(0);
+    let correctNum = Math.floor(Math.random() * 100);
     return correctNum;
 }
 let correct = createCorrect();
 
 const criaDiv = (el) => {
     let newDiv = document.createElement('div');
+
     newDiv.classList.add('tentativa');
     newDiv.innerText = `${el.value}`;
     tentEl.append(newDiv);
@@ -27,32 +29,31 @@ const divSeMenor = () => {
     div.style.backgroundColor = `#2F6073`;
 }
 
-const startAgain = () => {
-    let startBtn = document.querySelector('.again_bnt');
-    startBtn.addEventListener('click', restart);
-}
-
-function restart() { // terminar isso ()
+function restart() { // Começa o jogo novamente
     congrats.style.visibility = 'hidden';
     input.disabled = false;
-    submit.disabled = false;
     input.value = '';
     input.focus();
+    tentativa = 0;
+    correct = createCorrect();
+    console.log('New correct number: ', correct);
+    tentEl.innerHTML = '';
 }
+startBtn.addEventListener('click', restart);
 
 function tentativa(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     tentativas++;
-    console.log(correct); // só p testar
 
-    if (isNaN(input.value) || input.value > 100) {
+    let userInput = parseInt(input.value);
+
+    if (isNaN(userInput) || userInput > 100) {
         input.value = '';
         input.focus();
         return;
     }
 
-    if (input.value === correct) {
-        let congrats = document.querySelector('.congrats_popup');
+    if (userInput === correct) {
         let correctText = document.querySelector('.numero');
         let attempts = document.querySelector('.tentativas');
         congrats.style.visibility = 'visible';
@@ -61,21 +62,19 @@ function tentativa(e) {
 
         input.value = '';
         input.disabled = true;
-        submit.disabled = true;
-    } else if (input.value < correct) {
-        divSeMenor()
-    } else if (input.value > correct) {
-        divSeMaior();
     }
+    else if (userInput < correct) divSeMenor()
+    else if (userInput > correct) divSeMaior();
+    
 
     input.value = '';
     input.focus();
+    console.log(`Correct: ${correct}, User input: ${userInput}`);
 } 
 
 const checaEnter = (e) => {
     if (e.key === 'Enter') tentativa();
 }
 
-
-input.addEventListener('Keyup', checaEnter);
+input.addEventListener('keyup', checaEnter);
 form.addEventListener('submit', tentativa);
