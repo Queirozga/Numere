@@ -12,23 +12,23 @@ const createCorrect = () => { // cria o número correto
 }
 let correct = createCorrect();
 
-const criaDiv = (el) => { // cria a div de representação dos números na tela
+const criaDiv = (userInput) => { // cria a div de representação dos números na tela
     let newDiv = document.createElement('div');
 
     newDiv.classList.add('tentativa');
-    if (el.value > correct) newDiv.innerHTML = `<i id="arrow_icon" class="fa-solid fa-arrow-down"></i> ${el.value}`;
-    if (el.value < correct) newDiv.innerHTML = `<i id="arrow_icon" class="fa-solid fa-arrow-up"></i> ${el.value}`;
+    if (userInput > correct) newDiv.innerHTML = `<i id="arrow_icon" class="fa-solid fa-arrow-down"></i> ${userInput}`;
+    if (userInput < correct) newDiv.innerHTML = `<i id="arrow_icon" class="fa-solid fa-arrow-up"></i> ${userInput}`;
     
     tentEl.prepend(newDiv);
     return newDiv;
 }
 
-const divSeMaior = () => { // altera o background da div
-    let div = criaDiv(input);
+const divSeMaior = (userInput) => { // altera o background da div
+    let div = criaDiv(userInput);
     div.style.backgroundColor = `#A64138`;
 }
-const divSeMenor = () => { // altera o background da div
-    let div = criaDiv(input);
+const divSeMenor = (userInput) => { // altera o background da div
+    let div = criaDiv(userInput);
     div.style.backgroundColor = `#2F6073`;
 }
 
@@ -71,8 +71,8 @@ function tentativa(e) { // verificação do número correto e resultados
         input.value = '';
         input.disabled = true;
     }
-    else if (userInput < correct) divSeMenor();
-    else if (userInput > correct) divSeMaior();
+    else if (userInput < correct) divSeMenor(userInput);
+    else if (userInput > correct) divSeMaior(userInput);
 
     input.value = '';
     input.focus();
@@ -80,11 +80,4 @@ function tentativa(e) { // verificação do número correto e resultados
     console.log(`Tentativas final: ${tentativas}`);
 } 
 
-const checaEnter = (e) => { // envia o input ao apertar 'Enter'
-    if (e.key === 'Enter') {
-        tentativa();
-    };
-}
-
-input.addEventListener('keyup', checaEnter);
 form.addEventListener('submit', tentativa);
