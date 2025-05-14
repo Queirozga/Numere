@@ -3,8 +3,19 @@ let input = document.querySelector('#iadv');
 let tentEl = document.querySelector('.tentativa_container');
 let congrats = document.querySelector('.congrats_popup');
 let startBtn = document.querySelector('.again_bnt');
+let howToPlayPopup = document.querySelector('.how_to_play_popup');
+let howToPlayBtn = document.querySelector('.icon_Button');
+let closeHTPBtn = document.querySelector('.close_popup');
 let tentativas = 0;
 
+
+howToPlayBtn.addEventListener('click', () => {
+    howToPlayPopup.style.visibility = 'visible';
+});
+
+closeHTPBtn.addEventListener('click', () => {
+    howToPlayPopup.style.visibility = 'hidden';
+});
 
 const createCorrect = () => { // cria o número correto
     let correctNum = Math.floor(Math.random() * 100);
@@ -39,9 +50,7 @@ function restart() { // começa o jogo novamente
     input.focus();
     tentativas = 0;
     correct = createCorrect();
-    console.log('New correct number: ', correct);
     tentEl.innerHTML = '';
-    console.log(`Tentativas restart: ${tentativas}`);
 }
 startBtn.addEventListener('click', restart);
 
@@ -49,7 +58,6 @@ function tentativa(e) { // verificação do número correto e resultados
     if (e) e.preventDefault();
     
     let userInput = parseInt(input.value); // muda o type do input para number
-    console.log(`Tentativas começo: ${tentativas}`);
 
     if (isNaN(userInput) || userInput > 100) { // verifica se o input é válido
         input.value = '';
@@ -76,8 +84,9 @@ function tentativa(e) { // verificação do número correto e resultados
 
     input.value = '';
     input.focus();
-    console.log(`Correct: ${correct}, User input: ${userInput}`);
-    console.log(`Tentativas final: ${tentativas}`);
 } 
+
+
+
 
 form.addEventListener('submit', tentativa);

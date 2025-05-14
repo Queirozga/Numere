@@ -181,6 +181,10 @@ body{
         font-weight: 700;
         text-shadow: 1px 1px 5px #253a3846;
     }
+
+    & span{
+        font-weight: 800;
+    }
 }
 
 #arrow_icon {
@@ -188,7 +192,7 @@ body{
 }
 
 .how_to_play_popup{
-    visibility: visible;
+    visibility: hidden;
     position: fixed;
     display: flex;
     flex-flow: column wrap;
