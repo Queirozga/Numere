@@ -152,21 +152,22 @@ body{
     transform: translate(-50%, -50%);
     background-color: var(--bg2);
     padding: 10px;
-    border-radius: 5px;
-    width: 400px;
-    height: 350px;
-    border: 1px solid var(--cor1);
+    border-radius: 15px;
+    width: 600px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.096);
 
     & h1 {
         font-weight: 900px;
-        font-size: 2.5em;
+        font-size: 2.7em;
         color: var(--cor3);
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         text-shadow: 1px 1px 5px #0c0b0b5b;
     }
     
     & p {
         color: var(--cor1);
+        font-size: 21px;
         text-shadow: 1px 1px 5px #0c0b0b5b;
     }
 
@@ -176,7 +177,7 @@ body{
         width: 350px;
         border-radius: 10px;
         border: none;
-        font-size: 16px;
+        font-size: 21px;
         background-color: var(--cor3);
         color: var(--cor1);
         font-weight: 700;
@@ -384,6 +385,50 @@ footer{
         cursor: pointer
     }
     }
+    .congrats_popup {
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg2);
+    padding: 10px;
+    border-radius: 15px;
+    width: 500px;
+    height: 480px;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+
+    & h1 {
+        font-weight: 800px;
+        font-size: 2.6em;
+        color: var(--cor3);
+        margin-bottom: 50px;
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+    
+    & p {
+        color: var(--cor1);
+        font-size: 20px;
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+
+    & .again_bnt{
+        margin-top: 20px;
+        padding: 10px;
+        width: 350px;
+        border-radius: 10px;
+        border: none;
+        font-size: 20px;
+        background-color: var(--cor3);
+        color: var(--cor1);
+        font-weight: 700;
+        text-shadow: 1px 1px 5px #253a3846;
+    }
+    }
     footer{
     margin-top: 90px;
     padding-bottom: 10px;
@@ -521,6 +566,49 @@ footer{
         font-size: 20px;
         color: var(--cor1);
         cursor: pointer
+    }
+    }
+    .congrats_popup {
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg2);
+    padding: 10px;
+    border-radius: 15px;
+    width: 450px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+
+    & h1 {
+        font-weight: 900px;
+        font-size: 2.5em;
+        color: var(--cor3);
+        margin-bottom: 60px;
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+    
+    & p {
+        color: var(--cor1);
+        font-size: 19px;
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+    & .again_bnt{
+        margin-top: 20px;
+        padding: 10px;
+        width: 300px;
+        border-radius: 10px;
+        border: none;
+        font-size: 19px;
+        background-color: var(--cor3);
+        color: var(--cor1);
+        font-weight: 700;
+        text-shadow: 1px 1px 5px #253a3846;
     }
     }
     footer{
@@ -661,6 +749,49 @@ footer{
         font-size: 20px;
         color: var(--cor1);
         cursor: pointer
+    }
+    }
+    .congrats_popup {
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg2);
+    padding: 10px;
+    border-radius: 15px;
+    width: 330px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.096);
+
+    & h1 {
+        font-weight: 900px;
+        font-size: 2.3em;
+        color: var(--cor3);
+        margin-bottom: 60px;
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+    
+    & p {
+        color: var(--cor1);
+        font-size: 18px;
+        text-shadow: 1px 1px 5px #0c0b0b5b;
+    }
+    & .again_bnt{
+        margin-top: 20px;
+        padding: 10px;
+        width: 260px;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+        background-color: var(--cor3);
+        color: var(--cor1);
+        font-weight: 700;
+        text-shadow: 1px 1px 5px #253a3846;
     }
     }
     footer{
