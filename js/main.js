@@ -57,6 +57,9 @@ startBtn.addEventListener('click', restart);
 function tentativa(e) { // verificação do número correto e resultados
     if (e) e.preventDefault();
     
+    let footerTxt = document.querySelector('.footer_text');
+    footerTxt.style.visibility = 'hidden';
+
     let userInput = parseInt(input.value); // muda o type do input para number
 
     if (isNaN(userInput) || userInput > 100) { // verifica se o input é válido
@@ -73,6 +76,7 @@ function tentativa(e) { // verificação do número correto e resultados
         congrats.style.visibility = 'visible';
         correctText.innerText = correct;
 
+
         if (tentativas == 1) attempts.innerHTML = `Você acertou em <span>${tentativas}</span> tentativa.`;
         if (tentativas != 1) attempts.innerHTML = `Você acertou em <span>${tentativas}</span> tentativas.`;
 
@@ -85,7 +89,6 @@ function tentativa(e) { // verificação do número correto e resultados
     input.value = '';
     input.focus();
 } 
-
 
 
 
