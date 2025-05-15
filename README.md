@@ -1,2 +1,2 @@
-# jogo-adivinhe
+# Numere
  Um jogo de adivinhação
