@@ -73,8 +73,8 @@ function tentativa(e) { // verificação do número correto e resultados
         congrats.style.visibility = 'visible';
         correctText.innerText = correct;
 
-        if (tentativas == 1) attempts.innerText = `Você acertou em ${tentativas} tentativa.`;
-        if (tentativas != 1) attempts.innerText = `Você acertou em ${tentativas} tentativas.`;
+        if (tentativas == 1) attempts.innerHTML = `Você acertou em <span>${tentativas}</span> tentativa.`;
+        if (tentativas != 1) attempts.innerHTML = `Você acertou em <span>${tentativas}</span> tentativas.`;
 
         input.value = '';
         input.disabled = true;
